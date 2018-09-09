@@ -1,0 +1,5 @@
+---
+# tasks file for i3
+- name: libxcb-keysyms1-dev
+  apt:
+     name: lib

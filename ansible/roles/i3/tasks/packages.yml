@@ -1,5 +1,81 @@
 ---
 # tasks file for i3
-- name: libxcb-keysyms1-dev
+- name: install package libxcb-keysyms1-dev
   apt:
-     name: lib
+     name: libxcb-keysyms1-dev
+     state: latest
+     
+- name: install package libpango1.0-dev
+  apt:
+     name: libpango1.0-dev
+     state: latest
+     
+- name: install package libxcb-util0-dev
+  apt:
+     name: libxcb-util0-dev
+     state: latest
+     
+- name: install package xcb
+  apt:
+     name: xcb
+     state: latest
+     
+- name: install package libxcb1-dev
+  apt:
+     name: libxcb1-dev
+     state: latest
+     
+- name: install package libxcb-icccm4-dev
+  apt:
+     name: libxcb-icccm4-dev
+     state: latest
+     
+- name: install package libyajl-dev
+  apt:
+     name: libyajl-dev
+     state: latest
+     
+- name: install package libev-dev
+  apt:
+     name: libev-dev
+     state: latest
+          
+- name: install package libxcb-xkb-dev
+  apt:
+     name: libxcb-xkb-dev
+     state: latest
+     
+- name: install package libxcb-cursor-dev
+  apt:
+     name: libxcb-cursor-dev
+     state: latest
+     
+- name: install package libxkbcommon-dev
+  apt:
+     name: libxkbcommon-dev
+     state: latest
+     
+- name: install package libxcb-xinerama0-dev
+  apt:
+     name: libxcb-xinerama0-dev
+     state: latest
+     
+- name: install package libxkbcommon-x11-dev
+  apt:
+     name: libxkbcommon-x11-dev
+     state: latest
+     
+- name: install package libstartup-notification0-dev
+  apt:
+     name: libstartup-notification0-dev
+     state: latest
+     
+- name: install package libxcb-randr0-dev
+  apt:
+     name: libxcb-randr0-dev
+     state: latest
+     
+- name: install package llibxcb-xrm-dev
+  apt:
+     name: libxcb-xrm-dev
+     state: latest

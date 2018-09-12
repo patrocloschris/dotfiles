@@ -4,8 +4,6 @@
 - git:
     repo: 'https://github.com/Airblader/i3.git'
     dest: /opt/i3-gaps
-    version: release-0.22
-
 
 - name: Pulls gaps from github
   shell: git checkout gaps && git pull

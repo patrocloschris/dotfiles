@@ -1,5 +1,5 @@
 ---
 # tasks file for i3
 
--include: packages.yml
--include: i3_gaps.yml
+- include: packages.yml
+- include: i3_gaps.yml

@@ -1,0 +1,499 @@
+    1  cd /tmp/
+    2  wget https://releases.ansible.com/ansible/ansible-latest.tar.gz
+    3  tar zvfx ansible-latest.tar.gz 
+    4  ll
+    5  ls ansible-
+    6  ls ansible-2.6.3/
+    7  cd ansible-2.6.3/
+    8  ll
+    9  ls
+   10  ls -la
+   11  cd bin/
+   12  ls -la
+   13  cd /bin/
+   14  ls -la
+   15  ls -la | less
+   16  cd /tmp/ansible-2.6.3/
+   17  ls -la
+   18  apt-get purge ansible
+   19  history
+   20  apt-add-repository --remove  ppa:ansible/ansible
+   21  apt-get update
+   22  cd ..
+   23  cd /opt/
+   24  ls
+   25  mv /tmp/ansible-2.6.3/ .
+   26  ln -s ansible-2.6.3 ansible
+   27  ls -la
+   28  ls -la ansible
+   29  ls -la ansible/
+   30  cd ansible/bin/
+   31  ls
+   32  pwd
+   33  ln -s `pwd`/ansible /bin/ansible
+   34  cd /bin/
+   35  ls -la | less
+   36  cd /opt/
+   37  cd ansible
+   38  ll
+   39  cd bin
+   40  ls -la
+   41  for i in `ls`; do ln -s `pwd`/$i /bin/$i; done
+   42  for i in `ls`; do ln -s -f `pwd`/$i /bin/$i; done
+   43  cd ..
+   44  ansible
+   45  ls -la
+   46  rm -rf /bin/ansible*
+   47  python setup.py 
+   48  python setup.py --help 
+   49  python setup.py --help  | less
+   50  python setup.py build
+   51  python setup.py install
+   52  m-a prepare
+   53  prepare
+   54  mount /media/cdrom
+   55  cd /media/cdrom/
+   56  ls
+   57  chmod 777 VBoxLinuxAdditions.run 
+   58  cd ../cdrom0
+   59  ll
+   60  ls
+   61  cd ..
+   62  cp -r cdrom /tmp/
+   63  cd /tmp/
+   64  ls | less
+   65  cd /media/
+   66  ll
+   67  ls -la
+   68  cp -r cdrom0/ /tmp/
+   69  cd /tmp/cdrom0/
+   70  ll
+   71  ls
+   72  chmod 755 *.sh
+   73  ./VBoxLinuxAdditions.run 
+   74  reboot
+   75  cd /tmp/
+   76  git clone https://www.github.com/Airlader/i3 i3-gaps
+   77  wget https://www.github.com/Airlader/i3
+   78  wget https://www.github.com/Airlader/i3/zip
+   79  apt-get install git
+   80  git clone https://www.github.com/Airlader/i3 i3-gaps
+   81  git clone https://www.github.com/Airlader/i3.git i3-gaps
+   82  git clone https://www.github.com/Airblader/i3.git i3-gaps
+   83  cd i3-gaps/
+   84  apt-get install autoreconf
+   85  autoreconf --force --inst
+   86  make
+   87  apt-get install make
+   88  make
+   89  cd /media/cdrom0/
+   90  ll
+   91  ls
+   92  cd ../cdrom
+   93  ls -la
+   94  cd ..
+   95  ls -la
+   96  cd cdrom
+   97  ls
+   98  ls -la
+   99  cd ../cdrom0
+  100  ls -la
+  101  reboot
+  102  echo deb http://ftp.debian.org/debian stretch-backports main contrib > /etc/apt/sources.list.d/stretch-backports.list
+  103  cat /etc/apt/sources.list.d/stretch-backports.list 
+  104  apt update
+  105  apt install virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r)
+  106  apt install -t stretch-backports virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r)
+  107  reboot
+  108  history
+  109  ls
+  110  mkdir scripts
+  111  cd scripts/
+  112  history 
+  113  man history 
+  114  echo "$(cat /etc/apt/sources.list.d/stretch-backports.list )
+  115  echo "$(cat /etc/apt/sources.list.d/stretch-backports.list )"
+  116  history
+  117  echo "$(echo deb http://ftp.debian.org/debian stretch-backports main contrib > /etc/apt/sources.list.d/stretch-backports.list)" >> ./install_vbox_env.sh
+  118  cat install_vbox_env.sh 
+  119  echo "$(echo deb http://ftp.debian.org/debian stretch-backports main contrib > /etc/apt/sources.list.d/stretch-backports.list)"
+  120  cat install_vbox_env.sh 
+  121  echo "$(echo deb http://ftp.debian.org/debian stretch-backports main contrib )"> /etc/apt/sources.list.d/stretch-b
+  122  cat install_vbox_env.sh 
+  123  echo "echo deb http://ftp.debian.org/debian stretch-backports main contrib > /etc/apt/sources.list.d/stretch-backports.list" >> ./install_vbox_env.sh
+  124  cat install_vbox_env.sh 
+  125  echo "$(apt update)"
+  126  echo "apt update" >> ./install_vbox_env.sh 
+  127  echo "apt install -t stretch-backports virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r)"
+  128  echo "apt install -t stretch-backports virtualbox-guest-dkms virtualbox-guest-x11 linux-headers-$(uname -r)">> ./install_vbox_env.sh 
+  129  less install_vbox_env.sh 
+  130  reset
+  131  history
+  132  history | grep ansible
+  133  cd /opt/
+  134  ll
+  135  ls
+  136  cd ansible
+  137  ls -la
+  138  history
+  139  history | less
+  140  ls -la
+  141  history | less
+  142  ansible-doc -l
+  143  python -version
+  144  python -version
+  145  python -v
+  146  apt install python-paramiko
+  147  apt-get update
+  148  less /etc/apt/sources.list.d/
+  149  ll /etc/apt/sources.list.d/
+  150  ls -la /etc/apt/sources.list.d/
+  151  rm -rf /etc/apt/sources.list.d/stretch-b
+  152  apt-get update
+  153  apt  update
+  154  apt list --upgradable 
+  155  apt upgrade
+  156  apt-get upgrade
+  157  dpkg --configure -a
+  158  apt-get upgrade
+  159  apt upgrade
+  160  reboot
+  161  cd /opt/ansible
+  162  ls
+  163  ls -la
+  164  apt install pyhton-pip
+  165  apt install python-pip
+  166  pip install requirements.txt 
+  167  ls
+  168  less requirements.txt 
+  169  pip install -r requirements.txt 
+  170  ansible-doc -l
+  171  ansible-doc -l
+  172  reset
+  173  ansible localhost -m setup
+  174  ansible localhost -m setup | less
+  175  cd 
+  176  mkdir git
+  177  cd git
+  178  ls -la
+  179  git clone https://gitlab.com/christoupat/ansible-debian.git
+  180  ls
+  181  cd ansible-debian/
+  182  ls
+  183  mkdir scripts
+  184  cd scripts/
+  185  cp ~/scripts/install_vbox_env.sh .
+  186  cd ..
+  187  ll
+  188  ls -la
+  189  mkdir ansible
+  190  cd ansible/
+  191  touch play.yaml
+  192  cd ..
+  193  git status
+  194  git add --all
+  195  git commit -m "init commit"
+  196  git config --global --edit
+  197  git branch
+  198  git push origin master
+  199  cd ansible/
+  200  vi play.yaml 
+  201  nano play.yaml 
+  202  ls -la
+  203  rm -rf play.yaml 
+  204  ansible-galaxy init debian_install
+  205  ls -la
+  206  cd debian_install/
+  207  ls -la
+  208  ansible -v
+  209  ansible -v | less
+  210  ansible -version
+  211  ansible --version
+  212  reset
+  213  ls
+  214  ls -la
+  215  cd ..
+  216  ls -la
+  217  cd debian_install/
+  218  ls -la
+  219  rm -rf *
+  220  ansible-galaxy init i3
+  221  ansible-galaxy init debian
+  222  ansible-galaxy init other
+  223  git status
+  224  cd ..
+  225  ls
+  226  ls -la
+  227  cd ..
+  228  ls -la
+  229  git status
+  230  git add --all
+  231  git commit -m "updated init commit"
+  232  git push origin master
+  233  ls -la
+  234  cd ansible/debian_install/
+  235  ls -la
+  236  mv * ../
+  237  ls -la
+  238  cd ..
+  239  ls -la
+  240  rm -rf debian_install/
+  241  nano hosts
+  242  ansible all -m ping
+  243  ansible --help
+  244  ansible --help | less
+  245  ansible all -m ping -i hosts 
+  246  ansible --help | less
+  247  ansible -m ping 
+  248  ansible -m ping -l localhsot
+  249  ansible -m ping -l localhsot -K
+  250  ansible localhost -m ping
+  251  ansible localhost -m setup
+  252  rm hosts
+  253  ls -la
+  254  touch os.yml
+  255  mkdir roles
+  256  mv i3/ roles/
+  257  mv other/ roles/
+  258  mv debian/ roles/
+  259  nano  os.yml 
+  260  cd roles/debian/
+  261  ls
+  262  cd tasks/
+  263  ls -la
+  264  touch unix_tools.yml
+  265  nano unix_tools.yml 
+  266  cd ../../
+  267  cd ..
+  268  ll
+  269  ll
+  270  nano os.yml 
+  271  cd  roles/debian/
+  272  ls -la
+  273  cd tasks/
+  274  nano main.yml 
+  275  ls -la
+  276  nano main.yml 
+  277  cd ../../../
+  278  ansible-playbook localhost os.yml 
+  279  ansible-playbook os.yml 
+  280  nano roles/debian/tasks/unix_tools.yml 
+  281  ansible-playbook os.yml 
+  282  nano roles/debian/tasks/unix_tools.yml 
+  283  ansible-playbook os.yml 
+  284  nano roles/debian/tasks/unix_tools.yml 
+  285  nano roles/debian/tasks/main.yml 
+  286  cat roles/debian/tasks/unix_tools.yml  >> roles/debian/tasks/main.yml 
+  287  nano roles/debian/tasks/main.yml 
+  288  ansible-playbook os.yml 
+  289  pic os.yml 
+  290  pico os.yml 
+  291  ansible-playbook os.yml 
+  292  cd roles/
+  293  ;;
+  294  ll
+  295  ls 
+  296  cd debian/
+  297  ls -la
+  298  cd tasks/
+  299  ls -la
+  300  rm unix_tools.yml 
+  301  nano main.yml 
+  302  cd ../../../
+  303  ansible-playbook os.yml 
+  304  nano roles/debian/tasks/
+  305  ansible-playbook os.yml 
+  306  htop 
+  307  nano roles/debian/tasks/main.yml 
+  308  cp roles/debian/tasks/main.yml roles/debian/tasks/command.yml 
+  309  cp roles/debian/tasks/main.yml roles/debian/tasks/vim.yml
+  310  nano roles/debian/tasks/vim.yml
+  311  nano roles/debian/tasks/command.yml 
+  312  ls roles/debian/tasks/
+  313  mv roles/debian/tasks/command.yml roles/debian/tasks/commands.yml 
+  314  nano roles/debian/tasks/main.yml 
+  315  ansible-playbook os.yml 
+  316  nano roles/debian/tasks/main.yml 
+  317  ansible-playbook os.yml 
+  318  nano roles/debian/tasks/commands.yml 
+  319  nano roles/debian/tasks/main.yml 
+  320  ld
+  321  ls
+  322  cd roles/
+  323  ls -la
+  324  cd ie
+  325  cd i3/
+  326  ls
+  327  cd tasks/
+  328  ls -la
+  329  cp main.yml packages.yml
+  330  cp main.yml i3_gaps.yml
+  331  nano packages.yml 
+  332  cd ../../../
+  333  cd ..
+  334  git status
+  335  git add --all
+  336  git commit -m "added roles"
+  337  git push origin master
+  338  git pull --rebase
+  339  git fetch
+  340  git pull --rebase
+  341  ll
+  342  ls -la
+  343  cd ansible/
+  344  ls -la
+  345  ansible-playbook os.yml 
+  346  nano os.yml 
+  347  ansible-playbook os.yml 
+  348  nano roles/i3/tasks/main.yml 
+  349  ansible-playbook os.yml 
+  350  nano roles/i3/tasks/i3_gaps.yml 
+  351  nano roles/i3/tasks/packages.yml 
+  352  cat roles/i3/tasks/packages.yml  | wc -l
+  353  nano roles/i3/tasks/packages.yml 
+  354  ansible-playbook os.yml 
+  355  cd /opt/i3-gaps/
+  356  make
+  357  ls
+  358  ld -la
+  359  ls -la
+  360  git branch
+  361  make
+  362  make Makefile.am
+  363  git branch
+  364  git checkout gaps-netx
+  365  git checkout gaps-next
+  366  git pull
+  367  autoreconf --force --install
+  368  rm -rf build
+  369  mkdir -p  build
+  370  cd build/
+  371  ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+  372  make
+  373  make install
+  374  reboot
+  375  i3
+  376  apt install x11
+  377  apt install xorg
+  378  reboot 
+  379  nano ~/.xinitrc
+  380  startx
+  381  i3
+  382  startx
+  383  reboot
+  384  exit
+  385  exit
+  386  ext
+  387  exit
+  388  cd /var/log/messages
+  389  cat /var/log/messages
+  390  i3 -v
+  391  cd /etc/i3/
+  392  ls -la
+  393  cd 
+  394  cd .config/i3/
+  395  ls -la
+  396  less config 
+  397  apt install i3status
+  398  startx
+  399  ps -ef | grep xorg
+  400  kill -9 729
+  401  ls -la
+  402  cd /etc/ie
+  403  cd /etc/i3/
+  404  ls -la
+  405  vim config
+  406  vim config
+  407  vim config.keycodes 
+  408  vim config
+  409  i3-config-wizard 
+  410  rm -rf i3
+  411  i3-config-wizard 
+  412  cd
+  413  cd .config/
+  414  ls
+  415  rm i3
+  416  rm -rf i3
+  417  i3-config-wizard 
+  418  startx
+  419  trdry
+  420  trdrystartx
+  421  startx
+  422  history
+  423  history | less
+  424  htop
+  425  reboot
+  426  cd /media/sf_shared_vm/
+  427  ls -la
+  428  xdpyinfo 
+  429  startx
+  430  xdpyinfo 
+  431  xdpyinfo | grep 'dimensions:'
+  432  cd /etc/X11/
+  433  xrandr 
+  434  reboot
+  435  ls -la
+  436  X -configure
+  437  ls -la
+  438  cp xorg.conf.new /etc/X11/xorg.conf
+  439  xrand
+  440  xrandr 
+  441  vim /etc/X11/xorg.conf 
+  442  startx 
+  443  reboot
+  444  startx
+  445  xrandr 
+  446  vim /etc/X11/xorg.conf 
+  447  vim /etc/X11/xorg.conf 
+  448  restart X
+  449  service X restart
+  450  service xorg restart
+  451  service x11 restart
+  452  reboot
+  453  startx -- -screen  1920x1080
+  454  less /var/log/Xorg.0.log
+  455  apt install xserver-xorg-video-intel
+  456  startx -- -screen 0 
+  457  startx -- -screen 0  1920x1080
+  458  startx -- -screen 0 1920x1080
+  459  startx -- -screen 0 1920x1080  | less
+  460  startx -- -screen 0 
+  461  startx 
+  462  reboot
+  463  history  > backup1.txt
+  464  apt install xserver-xorg
+  465  apt install xinit
+  466  halt 
+  467  apt install i3blocks i3bar i3status i3-lock-wrapper
+  468  apt install  i3status 
+  469  cd /opt/i3-gaps/
+  470  ls -la
+  471  less
+  472  ls | less
+  473  apt instal lightdm lightdm-gtk-greeter termite rofi compton ranger irssi feh zsh zsh-completions net-tools ssh light paulseaudio
+  474  apt install lightdm lightdm-gtk-greeter termite rofi compton ranger irssi feh zsh zsh-completions net-tools ssh light paulseaudio
+  475  apt install lightdm lightdm-gtk-greeter rofi compton ranger irssi feh zsh  net-tools ssh pulseaudio
+  476  cd /tmp/
+  477  cd /opt/
+  478  git clone https://github.com/ryanoasis/nerd-fonts.git
+  479  reboot
+  480  apt purge lightdm lightdm-gtk-greeter rofi compton ranger irssi feh zsh  net-tools ssh pulseaudio
+  481  reboot
+  482  exit
+  483  shutdown 
+  484  shutdown -c
+  485  shutdown -h noe
+  486  shutdown -h now
+  487  exec i3
+  488  exec i3
+  489  exit
+  490  cp xorg.conf.new /etc/X11/xorg.conf 
+  491  apt install i3status suckless-tools lightdm
+  492  reboot
+  493  exit
+  494  exit
+  495  i3
+  496  i3
+  497  exit
+  498  exec i3
+  499  history  > backup2.txt

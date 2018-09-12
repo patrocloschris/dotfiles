@@ -10,12 +10,82 @@
   args:
     chdir: /opt/i3-gaps/
 
-- name: Compile packages
-  shell: make
+- name: configure packages
+  shell: autoreconf --force --install
   args:
     chdir: /opt/i3-gaps/
 
-- name: Compile and install packages
-  shell: make install
+- name: Delete folder if exists
+  shell: rm -rf build && mkdir -p  build
   args:
     chdir: /opt/i3-gaps/
+
+- name: Prepare configuration
+  shell: ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+  args:
+    chdir: /opt/i3-gaps/build
+
+- name: Compile
+  shell: make
+  args:
+    chdir: /opt/i3-gaps/build
+
+- name: Compile and install
+  shell: make install
+  args:
+    chdir: /opt/i3-gaps/build
+
+- name: Install X server
+  apt:
+     name: xorg
+     state: latest
+
+- name: Construct Xorg config
+  shell: X -configure
+
+    
+- name: Construct Xorg config
+  shell: X -configure
+  
+- name: copy configuration
+  copy:
+    src: xorg.conf.new
+    dest: /etc/X11/xorg.conf
+
+- name: copy configuration
+  copy:
+    src: xorg.conf.new
+    dest: /etc/X11/xorg.conf
+
+- name: Clean xorg 
+  file:
+    state: absent
+    path: xorg.conf.new    
+
+- name: Install xserver-xorg
+  apt:
+     name: xserver-xorg
+     state: latest
+
+- name: Install xinit
+  apt:
+     name: xinit
+     state: latest
+     
+- name: i3status
+  apt:
+     name: i3status
+     state: latest
+
+- name: Install suckless-tools
+  apt:
+     name: suckless-tools
+     state: latest
+
+- name: Install lightdm
+  apt:
+     name: lightdm
+     state: latest
+
+- name: setup xinit
+  shell: echo 'exec i3' >> ~/.xinitrc

@@ -1,0 +1,6 @@
+---
+- name: Installation of VirtualBox guest utils
+  hosts: 127.0.0.1
+
+  roles: 
+    - virtualbox

@@ -1,0 +1,29 @@
+---
+
+# echo deb http://ftp.debian.org/debian stretch-backports main contrib > /etc/apt/sources.list.d/stretch-backports.list
+- apt_repository:
+    repo: deb http://ftp.debian.org/debian stretch-backports main contrib
+    state: present
+    filename: stretch-backports
+
+- name: apt-get update
+  apt:
+    update_cache: yes
+
+- name: Get kernel header version
+  shell: "uname -r;"
+  register: headers
+  ignore_errors: True
+
+- debug: msg=linux-headers-{{ headers.stdout }}
+
+- name: Install a list of packages
+  apt:
+    name: "{{ packages }}"
+    default_release: stretch-backports
+  vars:
+    packages:
+    - virtualbox-guest-dkms
+    - virtualbox-guest-x11
+    - linux-headers-{{ headers.stdout }}
+  when: headers is succeeded 

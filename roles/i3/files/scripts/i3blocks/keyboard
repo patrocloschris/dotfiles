@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+
+CODE=`xset -q | grep -A 0 'LED' | awk '{print $10}'`
+
+
+if [ $CODE == '00000002' ] || [ $CODE == '00000003' ]
+    then echo "EN";
+elif [ $CODE == '00001006' ] || [ $CODE == '00001007' ]
+    then echo "ΕΛ";
+else
+    echo "?";
+fi

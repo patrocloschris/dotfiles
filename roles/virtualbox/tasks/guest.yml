@@ -17,13 +17,18 @@
 
 - debug: msg=linux-headers-{{ headers.stdout }}
 
-- name: Install a list of packages
+- name: Install virtualbox-guest-dkms
   apt:
-    name: "{{ packages }}"
+    name: virtualbox-guest-dkms
     default_release: stretch-backports
-  vars:
-    packages:
-    - virtualbox-guest-dkms
-    - virtualbox-guest-x11
-    - linux-headers-{{ headers.stdout }}
+
+- name: Install virtualbox-guest-x11
+  apt:
+    name: virtualbox-guest-x11
+    default_release: stretch-backports
+
+- name: Install linux-headers-{{ headers.stdout }}
+  apt:
+    name: linux-headers-{{ headers.stdout }}
+    default_release: stretch-backports
   when: headers is succeeded 

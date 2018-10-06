@@ -1,0 +1,112 @@
+---
+
+- name: Installing software-properties-common
+  apt: 
+     name: software-properties-common 
+     update_cache: yes
+     state: latest
+
+- name: Installing libxcb-keysyms1-dev
+  apt:
+     name: libxcb-keysyms1-dev
+     state: latest
+
+- name: Installing libpango1.0-dev
+  apt:
+     name: libpango1.0-dev
+     state: latest
+
+- name: Installing libxcb-util0-dev
+  apt:
+     name: libxcb-util0-dev
+     state: latest
+
+- name: Installing libxcb-icccm4-dev
+  apt:
+     name: libxcb-icccm4-dev
+     state: latest
+
+- name: Installing libyajl-dev
+  apt:
+     name: libyajl-dev
+     state: latest
+
+- name: Installing libev-dev
+  apt:
+     name: libev-dev
+     state: latest
+
+- name: Installing libxcb-xkb-dev
+  apt:
+     name: libxcb-xkb-dev
+     state: latest
+
+- name: Installing libxcb-cursor-dev
+  apt:
+     name: libxcb-cursor-dev
+     state: latest
+
+- name: Installing libxkbcommon-dev
+  apt:
+     name: libxkbcommon-dev
+     state: latest
+
+- name: Installing libxcb-xinerama0-dev
+  apt:
+     name: libxcb-xinerama0-dev
+     state: latest
+
+- name: Installing libxkbcommon-x11-dev
+  apt:
+     name: libxkbcommon-x11-dev
+     state: latest
+
+- name: Installing libstartup-notification0-dev
+  apt:
+     name: libstartup-notification0-dev
+     state: latest
+
+- name: Installing libxcb-randr0-dev
+  apt:
+     name: libxcb-randr0-dev
+     state: latest
+
+- name: Installing libxcb-xrm-dev
+  apt:
+     name: libxcb-xrm-dev
+     state: latest
+
+- name: Installing libpcre2-dev
+  apt:
+     name: libpcre2-dev
+     state: latest
+
+- name: Installing libglib3.0-cil-dev
+  apt:
+     name: libglib3.0-cil-dev
+     state: latest
+
+- name: Installing gnutls-bin
+  apt:
+     name: gnutls-bin
+     state: latest
+
+- name: Installing gtk-doc-tools
+  apt:
+     name: gtk-doc-tools
+     state: latest
+
+- name: Installing libgnutls28-dev
+  apt:
+     name: libgnutls28-dev
+     state: latest
+
+- name: Installing libgirepository1.0-dev
+  apt:
+     name: libgirepository1.0-dev
+     state: latest
+
+- name: Installing libxml2-utils
+  apt:
+     name: libxml2-utils
+     state: latest

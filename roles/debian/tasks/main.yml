@@ -1,3 +1,5 @@
 ---
-- include: commands.yml
-- include: vim.yml
+- include: packages.yml
+#- include: tools.yml
+#- include: vim.yml
+#- include: configuration.yml

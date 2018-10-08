@@ -1,0 +1,7 @@
+---
+
+- name: "Copy Images directory under /opt/"
+  copy:
+    src: Images
+    dest: /opt/Images/
+    mode: 0777

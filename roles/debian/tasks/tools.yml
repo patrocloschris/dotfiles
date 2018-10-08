@@ -1,12 +1,194 @@
 ---
 
-- name: install htop
+- name: Installing aptitude
   apt: 
-     name: htop 
+     name: aptitude 
      update_cache: yes
      state: latest
 
-- name: install tree
+- name: Installing xorg
+  apt:
+     name: xorg
+     state: latest
+
+- name: Installing xserver-xorg
+  apt:
+     name: xserver-xorg
+     state: latest
+
+- name: Installing xinit
+  apt:
+     name: xinit
+     state: latest
+
+- name: Installing dirmngr
+  apt:
+     name: dirmngr
+     state: latest
+
+- name: Installing htop
+  apt:
+     name: htop
+     state: latest
+
+- name: Installing tree
   apt:
      name: tree
      state: latest
+
+- name: Installing cmake
+  apt:
+     name: cmake
+     state: latest
+
+- name: Remove package python-apt
+  apt: 
+    name: python-apt
+    state: absent
+
+- name: Remove package libpython3.5-dev
+  apt: 
+    name: libpython3.5-dev 
+    state: absent
+
+- name: Installing libpython3.5-dev
+  apt: 
+    name: libpython3.5-dev 
+    state: present 
+    update_cache: yes
+
+- name: Installing python-pip
+  apt:
+     name: python-pip
+     state: latest
+
+- name: Installing python3-pip
+  apt:
+     name: python3-pip
+     state: latest
+
+- name: Installing lightdm
+  apt:
+     name: lightdm
+     state: latest
+
+- name: Installing lightdm-gtk-greeter
+  apt:
+     name: lightdm-gtk-greeter
+     state: latest
+
+- name: Installing mupen64plus
+  apt:
+     name: mupen64plus
+     state: latest
+
+- name: Installing g++
+  apt:
+     name: g++
+     state: latest
+
+- name: Installing valac
+  apt:
+     name: valac
+     state: latest
+
+- name: Installing intltool
+  apt:
+     name: intltool
+     state: latest
+
+- name: Installing gperf
+  apt:
+     name: gperf
+     state: latest
+
+- name: Installing alsa-utils
+  apt:
+     name: alsa-utils
+     state: latest
+
+- name: Installing scrot
+  apt:
+     name: scrot
+     state: latest
+
+- name: Installing imagemagick
+  apt:
+     name: imagemagick
+     state: latest
+
+- name: Installing sxiv
+  apt:
+     name: sxiv
+     state: latest
+
+- name: Installing acpi
+  apt:
+     name: acpi
+     state: latest
+
+- name: Installing xautolock
+  apt:
+     name: xautolock
+     state: latest
+
+- name: Installing sysstat
+  apt:
+     name: sysstat
+     state: latest
+
+- name: Installing net-tools
+  apt:
+     name: net-tools
+     state: latest
+
+- name: Installing clipit
+  apt:
+     name: clipit
+     state: latest
+
+- name: Installing locate
+  apt:
+     name: locate
+     state: latest
+
+- name: Installing curl
+  apt:
+     name: curl
+     state: latest
+
+- name: Installing wget
+  apt:
+     name: wget
+     state: latest
+
+- name: Installing scp
+  apt:
+     name: scp
+     state: latest
+
+- name: Installing screen
+  apt:
+     name: screen
+     state: latest
+
+- name: Installing docker
+  apt:
+     name: docker
+     state: latest
+
+- name: Installing rofi
+  apt:
+     name: rofi
+     state: latest
+
+- name: Remove package libpython3.5-dev
+  apt: 
+    name: libpython3.5-dev 
+    state: absent
+
+- name: Installing libpython3.5-dev
+  apt: 
+    name: libpython3.5-dev 
+    state: present 
+    update_cache: yes

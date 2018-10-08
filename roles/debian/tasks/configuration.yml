@@ -1,12 +1,53 @@
 ---
 
-- name: install htop
-  apt: 
-     name: htop 
-     update_cache: yes
-     state: latest
+- name: "Install Images directory"
+  copy:
+    src: Images
+    dest: /opt/
+    mode: 0777
 
-- name: install tree
-  apt:
-     name: tree
-     state: latest
+# Pending o fakelos den exei allaxei akoma se 777
+
+- name: "Setup Keyboard configuration"
+  copy:
+    src: configurations/keyboard
+    dest: /etc/default/keyboard
+    mode: preserve
+
+# set timezone
+- name: set timezone to Europe/Athens
+  timezone:
+    name: Europe/Athens
+
+#lightdm
+- name: "Setup Xorg configuration"
+  copy:
+    src: configurations/x11
+    dest: /etc/x11
+
+
+
+# Xorg
+- name: "Setup Xorg configuration"
+  copy:
+    src: configurations/x11
+    dest: /etc/x11
+
+- name: "Setup Xresources configuration"
+  copy:
+    src: local_confingurations/.Xresources
+    dest: /etc/x11
+
+
+
+# Bashrc
+
+
+
+
+# mupen64plus
+- name: "Setup mupen64plus configuration"
+  copy:
+    src: configuration/keyboard
+    dest: /etc/default/keyboard
+    mode: preserve

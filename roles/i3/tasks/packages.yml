@@ -1,81 +1,87 @@
 ---
-# tasks file for i3
-- name: install package libxcb-keysyms1-dev
+# suckless-tools
+
+- name: Installing libxcb-keysyms1-dev
   apt:
      name: libxcb-keysyms1-dev
      state: latest
-     
-- name: install package libpango1.0-dev
+
+- name: Installing libpango1.0-dev
   apt:
      name: libpango1.0-dev
      state: latest
-     
-- name: install package libxcb-util0-dev
+
+- name: Installing libxcb-util0-dev
   apt:
      name: libxcb-util0-dev
      state: latest
-     
-- name: install package xcb
+
+- name: Installing xcb
   apt:
      name: xcb
      state: latest
-     
-- name: install package libxcb1-dev
+
+- name: Installing libxcb1-dev
   apt:
      name: libxcb1-dev
      state: latest
-     
-- name: install package libxcb-icccm4-dev
+
+- name: Installing libxcb-icccm4-dev
   apt:
      name: libxcb-icccm4-dev
      state: latest
-     
-- name: install package libyajl-dev
+
+- name: Installing libyajl-dev
   apt:
      name: libyajl-dev
      state: latest
-     
-- name: install package libev-dev
+
+- name: Installing libev-dev
   apt:
      name: libev-dev
      state: latest
-          
-- name: install package libxcb-xkb-dev
+
+- name: Installing libxcb-xkb-dev
   apt:
      name: libxcb-xkb-dev
      state: latest
-     
-- name: install package libxcb-cursor-dev
+
+- name: Installing libxcb-cursor-dev
   apt:
      name: libxcb-cursor-dev
      state: latest
-     
-- name: install package libxkbcommon-dev
+
+- name: Installing libxkbcommon-dev
   apt:
      name: libxkbcommon-dev
      state: latest
-     
-- name: install package libxcb-xinerama0-dev
+
+- name: Installing libxcb-xinerama0-dev
   apt:
      name: libxcb-xinerama0-dev
      state: latest
-     
-- name: install package libxkbcommon-x11-dev
+
+- name: Installing libxkbcommon-x11-dev
   apt:
      name: libxkbcommon-x11-dev
      state: latest
-     
-- name: install package libstartup-notification0-dev
+
+- name: Installing libstartup-notification0-dev
   apt:
      name: libstartup-notification0-dev
      state: latest
-     
-- name: install package libxcb-randr0-dev
+
+- name: Installing libxcb-randr0-dev
   apt:
      name: libxcb-randr0-dev
      state: latest
-     
-- name: install package llibxcb-xrm-dev
+
+- name: Installing libxcb-xrm0
+  apt:
+     name: libxcb-xrm0
+     state: latest
+
+- name: Installing libxcb-xrm-dev
   apt:
      name: libxcb-xrm-dev
      state: latest

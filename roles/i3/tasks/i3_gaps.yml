@@ -1,6 +1,11 @@
 ---
 # tasks file for i3
 
+- name: Installing suckless-tools
+  apt:
+     name: suckless-tools
+     state: latest
+
 - git:
     repo: 'https://github.com/Airblader/i3.git'
     dest: /opt/i3-gaps

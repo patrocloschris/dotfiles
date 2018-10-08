@@ -5,9 +5,7 @@ export HISTSIZE=-1
 export HISTFILESIZE=-1
 
 # File manipulation
-alias mv='mv -v'
-alias rm='rm -vi'
-alias cp='cp -v'
+alias rm='rm -i'
 
 # Grep
 alias grep='grep --color=auto'

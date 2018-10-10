@@ -1,5 +1,4 @@
 ---
-
 - name: Installing aptitude
   apt: 
      name: aptitude 
@@ -41,10 +40,9 @@
      name: cmake
      state: latest
 
-- name: Remove package python-apt
+- name: Installing package python-apt
   apt: 
     name: python-apt
-    state: absent
 
 - name: Remove package libpython3.5-dev
   apt: 
@@ -162,11 +160,6 @@
      name: wget
      state: latest
 
-- name: Installing scp
-  apt:
-     name: scp
-     state: latest
-
 - name: Installing screen
   apt:
      name: screen
@@ -181,14 +174,3 @@
   apt:
      name: rofi
      state: latest
-
-- name: Remove package libpython3.5-dev
-  apt: 
-    name: libpython3.5-dev 
-    state: absent
-
-- name: Installing libpython3.5-dev
-  apt: 
-    name: libpython3.5-dev 
-    state: present 
-    update_cache: yes

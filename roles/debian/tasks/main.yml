@@ -1,6 +1,6 @@
 ---
-#- include: packages.yml
-#- include: tools.yml
+- include: packages.yml
+- include: tools.yml
 - include: configuration.yml
-#- include: vim.yml
+- include: vim.yml
 #- include: tmux.yml

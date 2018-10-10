@@ -1,6 +1,10 @@
 ---
-- name: install Vim
-  apt:
-     name: vim
-     update_cache: true
-     state: latest
+
+- git:
+    repo: 'https://github.com/amix/vimrc.git'
+    dest: /opt/vim_runtime
+    depth: 1
+    
+- name: "Install Vim"
+  shell: sh /opt/vim_runtime/vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
+

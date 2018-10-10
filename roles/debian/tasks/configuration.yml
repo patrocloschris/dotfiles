@@ -6,7 +6,8 @@
     dest: /opt/
     mode: 0777
 
-# Pending o fakelos den exei allaxei akoma se 777
+- name: "Change folder permissions"
+  shell: chmod 777 /opt/Images
 
 - name: "Setup Keyboard configuration"
   copy:
@@ -22,10 +23,9 @@
 #lightdm
 - name: "Setup Xorg configuration"
   copy:
-    src: configurations/x11
-    dest: /etc/x11
-
-
+    src: configurations/lightdm
+    dest: /etc/lightdm
+    mode: preserve
 
 # Xorg
 - name: "Setup Xorg configuration"
@@ -36,18 +36,23 @@
 - name: "Setup Xresources configuration"
   copy:
     src: local_confingurations/.Xresources
-    dest: /etc/x11
-
-
+    dest: /root/
 
 # Bashrc
-
-
-
-
-# mupen64plus
-- name: "Setup mupen64plus configuration"
+- name: "Setup Bashrc configuration"
   copy:
-    src: configuration/keyboard
-    dest: /etc/default/keyboard
+    src: local_confingurations/.bashrc
+    dest: /root/.bashrc
+
+- name: "Setup Bash Profile configuration"
+  copy:
+    src: local_confingurations/.bash_profile
+    dest: /root/.bash_profile
+
+# Config Dir
+- name: "Setup config Directory"
+  copy:
+    src: local_confingurations/.config
+    dest: /root/
     mode: preserve
+

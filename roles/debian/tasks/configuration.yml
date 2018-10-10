@@ -57,7 +57,12 @@
     src: local_configurations/.config
     dest: /root/
 
-- name: "Setup tmux configuration"
+- name: "Setup tmux configuration 1/2"
+  copy:
+    src: local_configurations/.tmux
+    dest: /root/
+
+- name: "Setup tmux configuration 2/2"
   copy:
     src: local_configurations/.tmux.conf
     dest: /root/

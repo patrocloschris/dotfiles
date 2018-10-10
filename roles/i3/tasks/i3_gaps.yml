@@ -110,6 +110,6 @@
     dest: /opt/nerd-fonts
   
 - name: "Installing nerd-fonts"
-  shell: ./install
+  shell: ./install.sh
   args:
     chdir: /opt/nerd-fonts/  

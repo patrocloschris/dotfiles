@@ -10,9 +10,7 @@
     depth: 1
 
 - name: "Copy Vim configuration"
-  copy:
-    src: /opt/vim_runtime
-    dest: /root/.vim_runtime
+  shell: cp -r /opt/vim_runtime /root/.vim_runtime
     
 - name: "Install Vim"
   shell: /root/.vim_runtime/install_awesome_vimrc.sh

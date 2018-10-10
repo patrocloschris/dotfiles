@@ -8,10 +8,10 @@
     src: configurations/.i3
     dest: /root/
 
-- name: "Setup irssi configuration"
-  copy:
-    src: configurations/.irssi
-    dest: /root/
+#- name: "Setup irssi configuration"
+#  copy:
+#    src: configurations/.irssi
+#    dest: /root/
 
 - name: "Setup fehbg configuration"
   copy:

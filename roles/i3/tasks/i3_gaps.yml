@@ -6,7 +6,8 @@
      name: suckless-tools
      state: latest
 
-- git:
+- name: "Fetching i3 gaps"
+  git:
     repo: 'https://github.com/Airblader/i3.git'
     dest: /opt/i3-gaps
 
@@ -40,7 +41,8 @@
   args:
     chdir: /opt/i3-gaps/build
 
-- git:
+- name: "Fetching i3 blocks"
+  git:
     repo: 'https://github.com/Airblader/i3blocks-gaps'
     dest: /opt/i3blocks
 
@@ -105,7 +107,8 @@
 - name: "Install i3ipc"
   shell: pip install i3ipc
 
-- git:
+- name: "Fetching nerd-fonts"
+  git:
     repo: 'https://github.com/ryanoasis/nerd-fonts.git'
     dest: /opt/nerd-fonts
   

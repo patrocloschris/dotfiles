@@ -60,7 +60,8 @@
      name: build-essential
      state: latest
 
-- git:
+- name: "Fetching vte-ng"
+  git:
     repo: 'https://github.com/thestinger/vte-ng.git'
     dest: /opt/vte-ng
 
@@ -82,7 +83,8 @@
 - name: do facts module to get latest information
   setup:
     
-- git:
+- name: "Fetching termite"
+  git:
     repo: 'https://github.com/thestinger/termite.git'
     dest: /opt/termite
 

@@ -4,6 +4,6 @@
   become: yes
 
   roles: 
-#    - debian
+    - debian
     - i3
 #    - other

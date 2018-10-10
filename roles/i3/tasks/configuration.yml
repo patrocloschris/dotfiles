@@ -1,7 +1,25 @@
 ---
 
-- name: "Copy Images directory under /opt/"
+- name: "Creating screenshots Directory"
+  shell: mkdir -p ~/Pictures/screenshots
+
+- name: "Setup i3 configuration"
   copy:
-    src: Images
-    dest: /opt/Images/
-    mode: 0777
+    src: configurations/.i3
+    dest: ~/
+
+- name: "Setup irssi configuration"
+  copy:
+    src: configurations/.irssi
+    dest: ~/
+
+- name: "Setup fehbg configuration"
+  copy:
+    src: configurations/.fehbg
+    dest: ~/
+
+- name: "Setup zsh configuration"
+  copy:
+    src: configurations/.zshrc
+    dest: ~/
+

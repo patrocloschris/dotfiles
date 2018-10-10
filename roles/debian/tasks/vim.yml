@@ -8,7 +8,12 @@
     repo: 'https://github.com/amix/vimrc.git'
     dest: /opt/vim_runtime
     depth: 1
+
+- name: "Copy Vim configuration"
+  copy:
+    src: /opt/vim_runtime
+    dest: ~/.vim_runtime
     
 - name: "Install Vim"
-  shell: bash /opt/vim_runtime/install_awesome_parameterized.sh /opt/vim_runtime --all
+  shell: ~/.vim_runtime/install_awesome_vimrc.sh
   ignore_errors: True

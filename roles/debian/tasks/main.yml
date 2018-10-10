@@ -3,4 +3,4 @@
 - include: tools.yml
 - include: configuration.yml
 - include: vim.yml
-#- include: tmux.yml
+- include: debug.yml

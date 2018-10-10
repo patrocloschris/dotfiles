@@ -5,5 +5,5 @@
 
   roles: 
     - debian
-#    - i3
+    - i3
 #    - other

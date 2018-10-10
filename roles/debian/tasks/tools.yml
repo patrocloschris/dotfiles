@@ -80,26 +80,6 @@
      name: mupen64plus
      state: latest
 
-- name: Installing g++
-  apt:
-     name: g++
-     state: latest
-
-- name: Installing valac
-  apt:
-     name: valac
-     state: latest
-
-- name: Installing intltool
-  apt:
-     name: intltool
-     state: latest
-
-- name: Installing gperf
-  apt:
-     name: gperf
-     state: latest
-
 - name: Installing alsa-utils
   apt:
      name: alsa-utils
@@ -173,4 +153,9 @@
 - name: Installing rofi
   apt:
      name: rofi
+     state: latest
+
+- name: Installing tmux
+  apt:
+     name: tmux
      state: latest

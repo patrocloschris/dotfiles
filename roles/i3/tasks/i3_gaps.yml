@@ -40,57 +40,76 @@
   args:
     chdir: /opt/i3-gaps/build
 
-- name: Install X server
-  apt:
-     name: xorg
-     state: latest
+- git:
+    repo: 'https://github.com/Airblader/i3blocks-gaps'
+    dest: /opt/i3blocks
 
-- name: Construct Xorg config
-  shell: X -configure
+- name: Pulls i3blocks from github
+  shell: git pull
+  args:
+    chdir: /opt/i3blocks
 
-    
-- name: Construct Xorg config
-  shell: X -configure
-  
-- name: copy configuration
-  copy:
-    src: xorg.conf.new
-    dest: /etc/X11/xorg.conf
+- name: make clean all for i3blocks
+  shell: make clean all
+  args:
+    chdir: /opt/i3blocks
 
-- name: copy configuration
-  copy:
-    src: xorg.conf.new
-    dest: /etc/X11/xorg.conf
+- name: Installing i3blocks
+  shell: make install
+  args:
+    chdir: /opt/i3blocks
 
-- name: Clean xorg 
-  file:
-    state: absent
-    path: xorg.conf.new    
-
-- name: Install xserver-xorg
-  apt:
-     name: xserver-xorg
-     state: latest
-
-- name: Install xinit
-  apt:
-     name: xinit
-     state: latest
-     
-- name: i3status
+- name: Installing i3status
   apt:
      name: i3status
      state: latest
 
-- name: Install suckless-tools
+- name: Installing i3lock
   apt:
-     name: suckless-tools
+     name: i3lock
      state: latest
 
-- name: Install lightdm
+- name: Installing ranger
   apt:
-     name: lightdm
+     name: ranger
+     state: latest
+
+- name: Installing irssi
+  apt:
+     name: irssi
+     state: latest
+
+- name: Installing feh
+  apt:
+     name: feh
+     state: latest
+
+- name: Installing zsh
+  apt:
+     name: zsh
+     state: latest
+
+- name: Installing redshift
+  apt:
+     name: redshift
+     state: latest
+
+- name: Installing redshift-gtk
+  apt:
+     name: redshift-gtk
      state: latest
 
 - name: setup xinit
   shell: echo 'exec i3' >> ~/.xinitrc
+
+- name: "Install i3ipc"
+  shell: pip install i3ipc
+
+- git:
+    repo: 'https://github.com/ryanoasis/nerd-fonts.git'
+    dest: /opt/nerd-fonts
+  
+- name: "Installing nerd-fonts"
+  shell: ./install
+  args:
+    chdir: /opt/nerd-fonts/  

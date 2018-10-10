@@ -1,0 +1,109 @@
+---
+
+- name: Installing g++
+  apt:
+     name: g++
+     state: latest
+
+- name: Installing gtk-doc-tools
+  apt:
+     name: gtk-doc-tools
+     state: latest
+
+- name: Installing valac
+  apt:
+     name: valac
+     state: latest
+
+- name: Installing gnutls-bin
+  apt:
+     name: gnutls-bin
+     state: latest
+
+- name: Installing intltool
+  apt:
+     name: intltool
+     state: latest
+
+- name: Installing libpcre2-dev
+  apt:
+     name: libpcre2-dev
+     state: latest
+
+- name: Installing libglib3.0-cil-dev
+  apt:
+     name: libglib3.0-cil-dev
+     state: latest
+
+- name: Installing libgnutls28-dev
+  apt:
+     name: libgnutls28-dev
+     state: latest
+
+- name: Installing libgirepository1.0-dev
+  apt:
+     name: libgirepository1.0-dev
+     state: latest
+
+- name: Installing libxml2-utils
+  apt:
+     name: libxml2-utils
+     state: latest
+
+- name: Installing gperf
+  apt:
+     name: gperf
+     state: latest
+
+- name: Installing build-essential
+  apt: 
+     name: build-essential
+     state: latest
+
+- git:
+    repo: 'https://github.com/thestinger/vte-ng.git'
+    dest: /opt/vte-ng
+
+- name: "Generating vte-ng installation configuration"
+  shell: echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH" && ./autogen.sh
+  args:
+    chdir: /opt/vte-ng/
+
+- name: "Compiling vte-ng"
+  shell: echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH" && make
+  args:
+    chdir: /opt/vte-ng/
+
+- name: "Installing vte-ng"
+  shell: echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH" && make install
+  args:
+    chdir: /opt/vte-ng/
+
+- git:
+    repo: 'https://github.com/thestinger/termite.git'
+    dest: /opt/termite
+
+- name: "Compiling termite"
+  shell: make
+  args:
+    chdir: /opt/termite/
+
+- name: "Installing termite"
+  shell: make install
+  args:
+    chdir: /opt/termite/
+
+- name: "Configuring termite 1/3"
+  shell: ldconfig
+  args:
+    chdir: /opt/termite/
+
+- name: "Configuring termite 2/3"
+  shell: mkdir -p /lib/terminfo/x
+  args:
+    chdir: /opt/termite/
+
+- name: "Configuring termite 3/3"
+  shell: ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
+  args:
+    chdir: /opt/termite/

@@ -3,3 +3,5 @@
 
 - include: packages.yml
 - include: i3_gaps.yml
+- include: configuration.yml
+- include: termite.yml

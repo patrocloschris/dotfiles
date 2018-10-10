@@ -1,49 +1,12 @@
 ---
 
-- name: Update and upgrade apt packages
-  become: true
-  apt:
-    upgrade: yes
-    update_cache: yes
-    cache_valid_time: 86400 #One day
-
 - name: Installing software-properties-common
   apt: 
      name: software-properties-common 
      update_cache: yes
      state: latest
 
-- name: Installing libpcre2-dev
-  apt:
-     name: libpcre2-dev
-     state: latest
-
-- name: Installing libglib3.0-cil-dev
-  apt:
-     name: libglib3.0-cil-dev
-     state: latest
-
-- name: Installing gnutls-bin
-  apt:
-     name: gnutls-bin
-     state: latest
-
-- name: Installing gtk-doc-tools
-  apt:
-     name: gtk-doc-tools
-     state: latest
-
-- name: Installing libgnutls28-dev
-  apt:
-     name: libgnutls28-dev
-     state: latest
-
-- name: Installing libgirepository1.0-dev
-  apt:
-     name: libgirepository1.0-dev
-     state: latest
-
-- name: Installing libxml2-utils
-  apt:
-     name: libxml2-utils
+- name: Installing build-essential
+  apt: 
+     name: build-essential
      state: latest

@@ -24,33 +24,46 @@
 - name: "Setup Xorg configuration"
   copy:
     src: configurations/lightdm
-    dest: /etc/lightdm
+    dest: /etc/
 
 # Xorg
 - name: "Setup Xorg configuration"
   copy:
     src: configurations/x11
-    dest: /etc/x11
+    dest: /etc/
 
 - name: "Setup Xresources configuration"
   copy:
     src: local_configurations/.Xresources
-    dest: /root/
+    dest: ~/
 
 # Bashrc
 - name: "Setup Bashrc configuration"
   copy:
     src: local_configurations/.bashrc
-    dest: /root/.bashrc
+    dest: ~/.bashrc
 
 - name: "Setup Bash Profile configuration"
   copy:
     src: local_configurations/.bash_profile
-    dest: /root/.bash_profile
+    dest: ~/.bash_profile
 
 # Config Dir
 - name: "Setup config Directory"
   copy:
     src: local_configurations/.config
-    dest: /root/
+    dest: ~/
+
+- name: "Setup tmux configuration"
+  copy:
+    src: local_configurations/.tmux
+    dest: ~/
+
+- name: "Publish changes to tmux"
+  shell: tmux source ~/.tmux.conf
+
+- name: "Install tmux plugins"
+  shell: ~/.tmux/plugins/tpm/bin/install_plugins
+  ignore_errors: True
+
 

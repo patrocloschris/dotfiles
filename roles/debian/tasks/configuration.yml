@@ -13,7 +13,7 @@
   copy:
     src: configurations/keyboard
     dest: /etc/default/keyboard
-    mode: preserve
+    mode: 0644
 
 # set timezone
 - name: set timezone to Europe/Athens
@@ -25,7 +25,6 @@
   copy:
     src: configurations/lightdm
     dest: /etc/lightdm
-    mode: preserve
 
 # Xorg
 - name: "Setup Xorg configuration"
@@ -54,5 +53,4 @@
   copy:
     src: local_confingurations/.config
     dest: /root/
-    mode: preserve
 

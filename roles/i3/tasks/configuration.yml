@@ -6,20 +6,20 @@
 - name: "Setup i3 configuration"
   copy:
     src: configurations/.i3
-    dest: ~/
+    dest: ~/,
 
 - name: "Setup irssi configuration"
   copy:
     src: configurations/.irssi
-    dest: ~/
+    dest: ~/.
 
 - name: "Setup fehbg configuration"
   copy:
     src: configurations/.fehbg
-    dest: ~/
+    dest: ~/.
 
 - name: "Setup zsh configuration"
   copy:
     src: configurations/.zshrc
-    dest: ~/
+    dest: ~/.
 

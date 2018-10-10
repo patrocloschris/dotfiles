@@ -35,7 +35,7 @@
 - name: "Setup Xresources configuration"
   copy:
     src: local_configurations/.Xresources
-    dest: ~/
+    dest: ~/.
 
 # Bashrc
 - name: "Setup Bashrc configuration"
@@ -52,12 +52,12 @@
 - name: "Setup config Directory"
   copy:
     src: local_configurations/.config
-    dest: ~/
+    dest: ~/.
 
 - name: "Setup tmux configuration"
   copy:
     src: local_configurations/.tmux
-    dest: ~/
+    dest: ~/.
 
 - name: "Publish changes to tmux"
   shell: tmux source ~/.tmux.conf

@@ -1,0 +1,2132 @@
+Using /etc/ansible/ansible.cfg as config file
+ [WARNING]: provided hosts list is empty, only localhost is available
+statically included: /root/dotfiles/roles/debian/tasks/packages.yml
+statically included: /root/dotfiles/roles/debian/tasks/tools.yml
+statically included: /root/dotfiles/roles/debian/tasks/configuration.yml
+statically included: /root/dotfiles/roles/debian/tasks/vim.yml
+statically included: /root/dotfiles/roles/i3/tasks/packages.yml
+statically included: /root/dotfiles/roles/i3/tasks/i3_gaps.yml
+statically included: /root/dotfiles/roles/i3/tasks/configuration.yml
+statically included: /root/dotfiles/roles/i3/tasks/termite.yml
+
+PLAYBOOK: os.yml ***************************************************************
+1 plays in os.yml
+
+PLAY [Installation of my Debian Machine from scratch] **************************
+
+TASK [setup] *******************************************************************
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/system/setup.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568 `" && echo ansible-tmp-1539182364.38-34943804033568="` echo ~/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpp7ZkOL TO /root/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568/setup.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568/ /root/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568/setup.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568/setup.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182364.38-34943804033568/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1]
+
+TASK [debian : Installing software-properties-common] **************************
+task path: /root/dotfiles/roles/debian/tasks/packages.yml:3
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392 `" && echo ansible-tmp-1539182365.09-1221572856392="` echo ~/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmptJvycF TO /root/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392/ /root/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182365.09-1221572856392/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": true, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "software-properties-common", 
+            "only_upgrade": false, 
+            "package": [
+                "software-properties-common"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing build-essential] *************************************
+task path: /root/dotfiles/roles/debian/tasks/packages.yml:9
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730 `" && echo ansible-tmp-1539182367.37-203713999677730="` echo ~/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpFMTLwd TO /root/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730/ /root/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182367.37-203713999677730/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "build-essential", 
+            "only_upgrade": false, 
+            "package": [
+                "build-essential"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing aptitude] ********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:2
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953 `" && echo ansible-tmp-1539182368.06-270820421061953="` echo ~/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpys8GKO TO /root/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953/ /root/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182368.06-270820421061953/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": true, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "aptitude", 
+            "only_upgrade": false, 
+            "package": [
+                "aptitude"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing xorg] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:8
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323 `" && echo ansible-tmp-1539182370.31-244465824114323="` echo ~/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpIehqMa TO /root/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323/ /root/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182370.31-244465824114323/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "xorg", 
+            "only_upgrade": false, 
+            "package": [
+                "xorg"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing xserver-xorg] ****************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:13
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766 `" && echo ansible-tmp-1539182371.03-211198917369766="` echo ~/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpPRrM2e TO /root/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766/ /root/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182371.03-211198917369766/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "xserver-xorg", 
+            "only_upgrade": false, 
+            "package": [
+                "xserver-xorg"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing xinit] ***********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:18
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182 `" && echo ansible-tmp-1539182371.71-175052085821182="` echo ~/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpVj25aj TO /root/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182/ /root/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182371.71-175052085821182/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "xinit", 
+            "only_upgrade": false, 
+            "package": [
+                "xinit"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing dirmngr] *********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:23
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390 `" && echo ansible-tmp-1539182372.4-149346374506390="` echo ~/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpMt9AQm TO /root/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390/ /root/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182372.4-149346374506390/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "dirmngr", 
+            "only_upgrade": false, 
+            "package": [
+                "dirmngr"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing htop] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:28
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826 `" && echo ansible-tmp-1539182373.09-273017150550826="` echo ~/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpTNYKk9 TO /root/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826/ /root/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182373.09-273017150550826/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "htop", 
+            "only_upgrade": false, 
+            "package": [
+                "htop"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing tree] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:33
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328 `" && echo ansible-tmp-1539182373.8-66418801433328="` echo ~/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmp6MoNpL TO /root/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328/ /root/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182373.8-66418801433328/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "tree", 
+            "only_upgrade": false, 
+            "package": [
+                "tree"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing cmake] ***********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:38
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919 `" && echo ansible-tmp-1539182374.5-220388070304919="` echo ~/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpUrCJ5z TO /root/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919/ /root/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182374.5-220388070304919/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "cmake", 
+            "only_upgrade": false, 
+            "package": [
+                "cmake"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing package python-apt] **********************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:43
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372 `" && echo ansible-tmp-1539182375.2-141674902782372="` echo ~/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpFYcVrM TO /root/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372/ /root/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182375.2-141674902782372/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "python-apt", 
+            "only_upgrade": false, 
+            "package": [
+                "python-apt"
+            ], 
+            "purge": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Remove package libpython3.5-dev] ********************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:47
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672 `" && echo ansible-tmp-1539182375.89-227107161801672="` echo ~/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmp3RGXSN TO /root/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672/ /root/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182375.89-227107161801672/" > /dev/null 2>&1 && sleep 0'
+changed: [127.0.0.1] => {
+    "changed": true, 
+    "diff": {}, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "libpython3.5-dev", 
+            "only_upgrade": false, 
+            "package": [
+                "libpython3.5-dev"
+            ], 
+            "purge": false, 
+            "state": "absent", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }, 
+    "stderr": "", 
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following package was automatically installed and is no longer required:\n  libpython3.5\nUse 'apt autoremove' to remove it.\nThe following packages will be REMOVED:\n  libpython3.5-dev\n0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.\nAfter this operation, 54.6 MB disk space will be freed.\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 122776 files and directories currently installed.)\r\nRemoving libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...\r\nProcessing triggers for man-db (2.7.6.1-2) ...\r\n", 
+    "stdout_lines": [
+        "Reading package lists...", 
+        "Building dependency tree...", 
+        "Reading state information...", 
+        "The following package was automatically installed and is no longer required:", 
+        "  libpython3.5", 
+        "Use 'apt autoremove' to remove it.", 
+        "The following packages will be REMOVED:", 
+        "  libpython3.5-dev", 
+        "0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.", 
+        "After this operation, 54.6 MB disk space will be freed.", 
+        "(Reading database ... ", 
+        "(Reading database ... 5%", 
+        "(Reading database ... 10%", 
+        "(Reading database ... 15%", 
+        "(Reading database ... 20%", 
+        "(Reading database ... 25%", 
+        "(Reading database ... 30%", 
+        "(Reading database ... 35%", 
+        "(Reading database ... 40%", 
+        "(Reading database ... 45%", 
+        "(Reading database ... 50%", 
+        "(Reading database ... 55%", 
+        "(Reading database ... 60%", 
+        "(Reading database ... 65%", 
+        "(Reading database ... 70%", 
+        "(Reading database ... 75%", 
+        "(Reading database ... 80%", 
+        "(Reading database ... 85%", 
+        "(Reading database ... 90%", 
+        "(Reading database ... 95%", 
+        "(Reading database ... 100%", 
+        "(Reading database ... 122776 files and directories currently installed.)", 
+        "Removing libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...", 
+        "Processing triggers for man-db (2.7.6.1-2) ..."
+    ]
+}
+
+TASK [debian : Installing libpython3.5-dev] ************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:52
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963 `" && echo ansible-tmp-1539182378.91-52846546062963="` echo ~/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpsiiFaa TO /root/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963/ /root/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182378.91-52846546062963/" > /dev/null 2>&1 && sleep 0'
+changed: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": true, 
+    "changed": true, 
+    "diff": {}, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "libpython3.5-dev", 
+            "only_upgrade": false, 
+            "package": [
+                "libpython3.5-dev"
+            ], 
+            "purge": false, 
+            "state": "present", 
+            "update_cache": true, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }, 
+    "stderr": "", 
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following NEW packages will be installed:\n  libpython3.5-dev\n0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 0 B/37.7 MB of archives.\nAfter this operation, 54.6 MB of additional disk space will be used.\nSelecting previously unselected package libpython3.5-dev:amd64.\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 122652 files and directories currently installed.)\r\nPreparing to unpack .../libpython3.5-dev_3.5.3-1+deb9u1_amd64.deb ...\r\nUnpacking libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...\r\nSetting up libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...\r\nProcessing triggers for man-db (2.7.6.1-2) ...\r\n", 
+    "stdout_lines": [
+        "Reading package lists...", 
+        "Building dependency tree...", 
+        "Reading state information...", 
+        "The following NEW packages will be installed:", 
+        "  libpython3.5-dev", 
+        "0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.", 
+        "Need to get 0 B/37.7 MB of archives.", 
+        "After this operation, 54.6 MB of additional disk space will be used.", 
+        "Selecting previously unselected package libpython3.5-dev:amd64.", 
+        "(Reading database ... ", 
+        "(Reading database ... 5%", 
+        "(Reading database ... 10%", 
+        "(Reading database ... 15%", 
+        "(Reading database ... 20%", 
+        "(Reading database ... 25%", 
+        "(Reading database ... 30%", 
+        "(Reading database ... 35%", 
+        "(Reading database ... 40%", 
+        "(Reading database ... 45%", 
+        "(Reading database ... 50%", 
+        "(Reading database ... 55%", 
+        "(Reading database ... 60%", 
+        "(Reading database ... 65%", 
+        "(Reading database ... 70%", 
+        "(Reading database ... 75%", 
+        "(Reading database ... 80%", 
+        "(Reading database ... 85%", 
+        "(Reading database ... 90%", 
+        "(Reading database ... 95%", 
+        "(Reading database ... 100%", 
+        "(Reading database ... 122652 files and directories currently installed.)", 
+        "Preparing to unpack .../libpython3.5-dev_3.5.3-1+deb9u1_amd64.deb ...", 
+        "Unpacking libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...", 
+        "Setting up libpython3.5-dev:amd64 (3.5.3-1+deb9u1) ...", 
+        "Processing triggers for man-db (2.7.6.1-2) ..."
+    ]
+}
+
+TASK [debian : Installing python-pip] ******************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:58
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283 `" && echo ansible-tmp-1539182387.16-214503776257283="` echo ~/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpPxDyFk TO /root/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283/ /root/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182387.16-214503776257283/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "python-pip", 
+            "only_upgrade": false, 
+            "package": [
+                "python-pip"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing python3-pip] *****************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:63
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054 `" && echo ansible-tmp-1539182387.87-122415604401054="` echo ~/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpFMULjH TO /root/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054/ /root/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182387.87-122415604401054/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "python3-pip", 
+            "only_upgrade": false, 
+            "package": [
+                "python3-pip"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing lightdm] *********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:68
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621 `" && echo ansible-tmp-1539182388.58-163207578672621="` echo ~/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpMHszi6 TO /root/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621/ /root/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182388.58-163207578672621/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "lightdm", 
+            "only_upgrade": false, 
+            "package": [
+                "lightdm"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing lightdm-gtk-greeter] *********************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:73
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301 `" && echo ansible-tmp-1539182389.32-84354833145301="` echo ~/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpEJE4oi TO /root/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301/ /root/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182389.32-84354833145301/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "lightdm-gtk-greeter", 
+            "only_upgrade": false, 
+            "package": [
+                "lightdm-gtk-greeter"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing mupen64plus] *****************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:78
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292 `" && echo ansible-tmp-1539182390.04-178128748062292="` echo ~/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpjM40pE TO /root/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292/ /root/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182390.04-178128748062292/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "mupen64plus", 
+            "only_upgrade": false, 
+            "package": [
+                "mupen64plus"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing alsa-utils] ******************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:83
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855 `" && echo ansible-tmp-1539182390.74-49781338028855="` echo ~/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpAn1Xdm TO /root/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855/ /root/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182390.74-49781338028855/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "alsa-utils", 
+            "only_upgrade": false, 
+            "package": [
+                "alsa-utils"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing scrot] ***********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:88
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052 `" && echo ansible-tmp-1539182391.44-86880753003052="` echo ~/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpD0mf3c TO /root/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052/ /root/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182391.44-86880753003052/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "scrot", 
+            "only_upgrade": false, 
+            "package": [
+                "scrot"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing imagemagick] *****************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:93
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474 `" && echo ansible-tmp-1539182392.15-228123635788474="` echo ~/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpoiJYUV TO /root/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474/ /root/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182392.15-228123635788474/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "imagemagick", 
+            "only_upgrade": false, 
+            "package": [
+                "imagemagick"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing sxiv] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:98
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464 `" && echo ansible-tmp-1539182392.85-154226433227464="` echo ~/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmp3ZOerj TO /root/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464/ /root/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182392.85-154226433227464/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "sxiv", 
+            "only_upgrade": false, 
+            "package": [
+                "sxiv"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing acpi] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:103
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426 `" && echo ansible-tmp-1539182393.55-44625931967426="` echo ~/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpToPAFs TO /root/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426/ /root/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182393.55-44625931967426/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "acpi", 
+            "only_upgrade": false, 
+            "package": [
+                "acpi"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing xautolock] *******************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:108
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105 `" && echo ansible-tmp-1539182394.24-229738678218105="` echo ~/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpyQs3jc TO /root/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105/ /root/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182394.24-229738678218105/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "xautolock", 
+            "only_upgrade": false, 
+            "package": [
+                "xautolock"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing sysstat] *********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:113
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958 `" && echo ansible-tmp-1539182394.94-93666866093958="` echo ~/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpsSnpMM TO /root/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958/ /root/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182394.94-93666866093958/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "sysstat", 
+            "only_upgrade": false, 
+            "package": [
+                "sysstat"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing net-tools] *******************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:118
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507 `" && echo ansible-tmp-1539182395.65-54247164725507="` echo ~/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpBst8PU TO /root/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507/ /root/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182395.65-54247164725507/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "net-tools", 
+            "only_upgrade": false, 
+            "package": [
+                "net-tools"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing clipit] **********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:123
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751 `" && echo ansible-tmp-1539182396.36-149727058581751="` echo ~/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpfGasTc TO /root/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751/ /root/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182396.36-149727058581751/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "clipit", 
+            "only_upgrade": false, 
+            "package": [
+                "clipit"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing locate] **********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:128
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369 `" && echo ansible-tmp-1539182397.05-153404242070369="` echo ~/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpsM4q13 TO /root/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369/ /root/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182397.05-153404242070369/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "locate", 
+            "only_upgrade": false, 
+            "package": [
+                "locate"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing curl] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:133
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086 `" && echo ansible-tmp-1539182397.75-136477948270086="` echo ~/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpqnOceH TO /root/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086/ /root/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182397.75-136477948270086/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "curl", 
+            "only_upgrade": false, 
+            "package": [
+                "curl"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing wget] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:138
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011 `" && echo ansible-tmp-1539182398.43-187542887043011="` echo ~/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpt8bS09 TO /root/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011/ /root/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182398.43-187542887043011/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "wget", 
+            "only_upgrade": false, 
+            "package": [
+                "wget"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing screen] **********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:143
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923 `" && echo ansible-tmp-1539182399.12-264313282101923="` echo ~/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpFANYUY TO /root/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923/ /root/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182399.12-264313282101923/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "screen", 
+            "only_upgrade": false, 
+            "package": [
+                "screen"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing docker] **********************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:148
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470 `" && echo ansible-tmp-1539182399.81-229467904668470="` echo ~/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpq7UHVZ TO /root/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470/ /root/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182399.81-229467904668470/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "docker", 
+            "only_upgrade": false, 
+            "package": [
+                "docker"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing rofi] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:153
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502 `" && echo ansible-tmp-1539182400.52-105119704165502="` echo ~/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpKHCz0I TO /root/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502/ /root/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182400.52-105119704165502/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "rofi", 
+            "only_upgrade": false, 
+            "package": [
+                "rofi"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Installing tmux] ************************************************
+task path: /root/dotfiles/roles/debian/tasks/tools.yml:158
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/packaging/os/apt.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651 `" && echo ansible-tmp-1539182401.24-137424476969651="` echo ~/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpJV0lsY TO /root/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651/apt.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651/ /root/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651/apt.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651/apt.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182401.24-137424476969651/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "cache_update_time": 1539182119, 
+    "cache_updated": false, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false, 
+            "autoremove": false, 
+            "cache_valid_time": 0, 
+            "deb": null, 
+            "default_release": null, 
+            "dpkg_options": "force-confdef,force-confold", 
+            "force": false, 
+            "install_recommends": null, 
+            "name": "tmux", 
+            "only_upgrade": false, 
+            "package": [
+                "tmux"
+            ], 
+            "purge": false, 
+            "state": "latest", 
+            "update_cache": false, 
+            "upgrade": null
+        }, 
+        "module_name": "apt"
+    }
+}
+
+TASK [debian : Install Images directory] ***************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:3
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519 `" && echo ansible-tmp-1539182401.94-183631397571519="` echo ~/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpmF8Irj TO /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/ /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpR5Honu TO /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/ /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpzJADoX TO /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/ /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmp2SBYeH TO /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/ /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1539182401.94-183631397571519/ > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "dest": "/opt/", 
+    "invocation": {
+        "module_args": {
+            "dest": "/opt/", 
+            "mode": 511, 
+            "src": "Images"
+        }, 
+        "module_name": "copy"
+    }, 
+    "src": "/root/dotfiles/roles/debian/files/Images"
+}
+
+TASK [debian : Change folder permissions] **************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:9
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/commands/command.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244 `" && echo ansible-tmp-1539182403.24-141654552678244="` echo ~/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpgv3ZCZ TO /root/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244/command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244/ /root/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244/command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244/command.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182403.24-141654552678244/" > /dev/null 2>&1 && sleep 0'
+changed: [127.0.0.1] => {
+    "changed": true, 
+    "cmd": "chmod 0777 /opt/Images", 
+    "delta": "0:00:00.006424", 
+    "end": "2018-10-10 17:40:03.425768", 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "chmod 0777 /opt/Images", 
+            "_uses_shell": true, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "warn": true
+        }, 
+        "module_name": "command"
+    }, 
+    "rc": 0, 
+    "start": "2018-10-10 17:40:03.419344", 
+    "stderr": "", 
+    "stdout": "", 
+    "stdout_lines": [], 
+    "warnings": [
+        "Consider using file module with mode rather than running chmod"
+    ]
+}
+ [WARNING]: Consider using file module with mode rather than running chmod
+
+TASK [debian : Setup Keyboard configuration] ***********************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:12
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549 `" && echo ansible-tmp-1539182403.5-156198131125549="` echo ~/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmp2vsgbL TO /root/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549/ /root/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549/stat.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182403.5-156198131125549/" > /dev/null 2>&1 && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217 `" && echo ansible-tmp-1539182403.71-196670163200217="` echo ~/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpqlQSnm TO /root/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217/ /root/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217/file.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182403.71-196670163200217/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "checksum": "fa1cc3eb1be4bbfdc884ecb00a7531c5d8d8c049", 
+    "dest": "/etc/default/keyboard", 
+    "diff": {
+        "after": {
+            "path": "/etc/default/keyboard"
+        }, 
+        "before": {
+            "path": "/etc/default/keyboard"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/etc/default/keyboard", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": 420, 
+            "original_basename": "keyboard", 
+            "owner": null, 
+            "path": "/etc/default/keyboard", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "keyboard", 
+            "state": null, 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/etc/default/keyboard", 
+    "size": 192, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [debian : set timezone to Europe/Athens] **********************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:19
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/extras/system/timezone.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186 `" && echo ansible-tmp-1539182404.14-222539039895186="` echo ~/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpkO19fY TO /root/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186/timezone.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186/ /root/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186/timezone.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186/timezone.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182404.14-222539039895186/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "diff": {
+        "after": {
+            "name": "Europe/Athens"
+        }, 
+        "before": {
+            "name": "Europe/Athens"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "hwclock": null, 
+            "name": "Europe/Athens"
+        }, 
+        "module_name": "timezone"
+    }
+}
+
+TASK [debian : Setup Xorg configuration] ***************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:24
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629 `" && echo ansible-tmp-1539182404.46-108505851043629="` echo ~/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpuBD6ok TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpgOXfEL TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpf7LCxm TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpPWOYWU TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpGYJYj8 TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpopGhr4 TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpnHUDtC TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpFtspSu TO /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1539182404.46-108505851043629/ > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "dest": "/etc/", 
+    "invocation": {
+        "module_args": {
+            "dest": "/etc/", 
+            "src": "configurations/lightdm"
+        }, 
+        "module_name": "copy"
+    }, 
+    "src": "/root/dotfiles/roles/debian/files/configurations/lightdm"
+}
+
+TASK [debian : Setup Xorg configuration] ***************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:30
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852 `" && echo ansible-tmp-1539182406.03-228610226312852="` echo ~/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpCBReLv TO /root/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852/ /root/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852/stat.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182406.03-228610226312852/" > /dev/null 2>&1 && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966 `" && echo ansible-tmp-1539182406.25-184684999278966="` echo ~/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpbafMP3 TO /root/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966/ /root/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966/file.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182406.25-184684999278966/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "checksum": "8ce52783ae484a05458dda75afd66b3ef3c9611c", 
+    "dest": "/etc/x11/xorg.conf", 
+    "diff": {
+        "after": {
+            "path": "/etc/x11/xorg.conf"
+        }, 
+        "before": {
+            "path": "/etc/x11/xorg.conf"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/etc/", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": "x11/xorg.conf", 
+            "owner": null, 
+            "path": "/etc/x11/xorg.conf", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "x11/xorg.conf", 
+            "state": null, 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/etc/x11/xorg.conf", 
+    "size": 2220, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [debian : Setup Xresources configuration] *********************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:35
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036 `" && echo ansible-tmp-1539182406.52-126044262902036="` echo ~/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpEY6plU TO /root/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036/ /root/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036/stat.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182406.52-126044262902036/" > /dev/null 2>&1 && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406 `" && echo ansible-tmp-1539182406.74-132576755478406="` echo ~/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpewBsy3 TO /root/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406/ /root/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406/file.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182406.74-132576755478406/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "checksum": "d257aced0273376c80c9c0ead4cf08e8e106cc2e", 
+    "dest": "/root/.Xresources", 
+    "diff": {
+        "after": {
+            "path": "/root/.Xresources"
+        }, 
+        "before": {
+            "path": "/root/.Xresources"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/root/", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": ".Xresources", 
+            "owner": null, 
+            "path": "/root/.Xresources", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": ".Xresources", 
+            "state": null, 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/root/.Xresources", 
+    "size": 1624, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [debian : Setup Bashrc configuration] *************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:41
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587 `" && echo ansible-tmp-1539182407.01-139496281200587="` echo ~/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpGue_ty TO /root/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587/ /root/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587/stat.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182407.01-139496281200587/" > /dev/null 2>&1 && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230 `" && echo ansible-tmp-1539182407.21-266041783508230="` echo ~/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpkJo9L8 TO /root/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230/ /root/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230/file.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182407.21-266041783508230/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "checksum": "e3e4b9555bfb409736505fd5815f27270c2fba2a", 
+    "dest": "/root/.bashrc", 
+    "diff": {
+        "after": {
+            "path": "/root/.bashrc"
+        }, 
+        "before": {
+            "path": "/root/.bashrc"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/root/.bashrc", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": ".bashrc", 
+            "owner": null, 
+            "path": "/root/.bashrc", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": ".bashrc", 
+            "state": null, 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/root/.bashrc", 
+    "size": 379, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [debian : Setup Bash Profile configuration] *******************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:46
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842 `" && echo ansible-tmp-1539182407.47-156245573788842="` echo ~/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpzoKSwV TO /root/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842/ /root/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842/stat.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182407.47-156245573788842/" > /dev/null 2>&1 && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538 `" && echo ansible-tmp-1539182407.67-98090207581538="` echo ~/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpSzCUzV TO /root/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538/ /root/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538/file.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182407.67-98090207581538/" > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "checksum": "4be7e80bdf11e51caca2f14f3dd1bbfe332e3503", 
+    "dest": "/root/.bash_profile", 
+    "diff": {
+        "after": {
+            "path": "/root/.bash_profile"
+        }, 
+        "before": {
+            "path": "/root/.bash_profile"
+        }
+    }, 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/root/.bash_profile", 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": ".bash_profile", 
+            "owner": null, 
+            "path": "/root/.bash_profile", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": ".bash_profile", 
+            "state": null, 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0644", 
+    "owner": "root", 
+    "path": "/root/.bash_profile", 
+    "size": 155, 
+    "state": "file", 
+    "uid": 0
+}
+
+TASK [debian : Setup config Directory] *****************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:52
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516 `" && echo ansible-tmp-1539182407.92-43412389804516="` echo ~/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516 `" ) && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpe4tgTC TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpxyp3iX TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpMX5XHa TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpCfsYRO TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpYpUU8g TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpeNqzaP TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpkPgrDL TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmplqCoCU TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp8NVktj TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpttAaTx TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp5VnzhX TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmprE9I72 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpZvaa0y TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpvNybk6 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpHqEM3N TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpemKis6 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpeINbas TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpCcrT1X TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpOzSIn2 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmplvnfrl TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp6Jiksh TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpu3I4fx TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpMH8soU TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpbAgBMI TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp_7DWlM TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpPcHg9q TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpH7Jl5a TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpzIW2Cb TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp5c6p4t TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpShG1Sm TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp8tByRu TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpGBdNjF TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpjbsjmj TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpXGJKLw TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpTsw11z TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpu8Htb8 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmppUlA9t TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpIwO_Ed TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpdqi79p TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpYSLqW5 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpaFM12I TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpbs_jmT TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpBYhjNQ TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpwCp7ZO TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpyw9ONP TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpjlFXZo TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpvNAcgW TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpQLTrRZ TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpeTooAt TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpkV0UKd TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp08gscm TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpV5a7mE TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpALDI0k TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpOcn_hH TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpuy9DhL TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpXp7pvC TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpYuDRwu TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpCRkESA TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp0Qs8C6 TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpafgP0T TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpElltvQ TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpW43TnF TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmpr3LXXl TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpe3kTJW TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/stat.py
+<127.0.0.1> PUT /tmp/tmp6qoWFK TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/stat.py && sleep 0'
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/files/file.py
+<127.0.0.1> PUT /tmp/tmpWd6wke TO /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/file.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1539182407.92-43412389804516/ > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "dest": "/root/", 
+    "invocation": {
+        "module_args": {
+            "dest": "~/", 
+            "src": "local_configurations/.config"
+        }, 
+        "module_name": "copy"
+    }, 
+    "src": "/root/dotfiles/roles/debian/files/local_configurations/.config"
+}
+
+TASK [debian : Setup tmux configuration] ***************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:57
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182420.26-261167182990950 `" && echo ansible-tmp-1539182420.26-261167182990950="` echo ~/.ansible/tmp/ansible-tmp-1539182420.26-261167182990950 `" ) && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'echo ~root && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1539182420.26-261167182990950/ > /dev/null 2>&1 && sleep 0'
+ok: [127.0.0.1] => {
+    "changed": false, 
+    "dest": "/root/", 
+    "invocation": {
+        "module_args": {
+            "dest": "~/", 
+            "src": "local_configurations/.tmux"
+        }, 
+        "module_name": "copy"
+    }, 
+    "src": "/root/dotfiles/roles/debian/files/local_configurations/.tmux"
+}
+
+TASK [debian : Publish changes to tmux] ****************************************
+task path: /root/dotfiles/roles/debian/tasks/configuration.yml:62
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/core/commands/command.py
+<127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: root
+<127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo ~/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576 `" && echo ansible-tmp-1539182420.35-245330691591576="` echo ~/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576 `" ) && sleep 0'
+<127.0.0.1> PUT /tmp/tmpfpV1T9 TO /root/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576/command.py
+<127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576/ /root/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576/command.py && sleep 0'
+<127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576/command.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1539182420.35-245330691591576/" > /dev/null 2>&1 && sleep 0'
+fatal: [127.0.0.1]: FAILED! => {
+    "changed": true, 
+    "cmd": "tmux source ~/.tmux.conf", 
+    "delta": "0:00:00.009140", 
+    "end": "2018-10-10 17:40:20.537219", 
+    "failed": true, 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "tmux source ~/.tmux.conf", 
+            "_uses_shell": true, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "warn": true
+        }, 
+        "module_name": "command"
+    }, 
+    "rc": 1, 
+    "start": "2018-10-10 17:40:20.528079", 
+    "stderr": "error connecting to /tmp/tmux-0/default (No such file or directory)", 
+    "stdout": "", 
+    "stdout_lines": [], 
+    "warnings": []
+}
+	to retry, use: --limit @/root/dotfiles/os.retry
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=46   changed=3    unreachable=0    failed=1   
+

@@ -68,7 +68,9 @@
     dest: /root/
 
 - name: "Publish changes to tmux"
-  shell: tmux source ~/.tmux.conf
+  shell: tmux source .tmux.conf
+  args:
+    chdir: /root/  
 
 - name: "Install tmux plugins"
   shell: /root/.tmux/plugins/tpm/bin/install_plugins

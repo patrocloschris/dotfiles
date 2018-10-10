@@ -100,7 +100,7 @@
      state: latest
 
 - name: setup xinit
-  shell: echo 'exec i3' >> ~/.xinitrc
+  shell: echo 'exec i3' > /root/.xinitrc
 
 - name: "Install i3ipc"
   shell: pip install i3ipc

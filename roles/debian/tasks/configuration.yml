@@ -1,5 +1,8 @@
 ---
 
+- name: do facts module to get latest information
+  setup:
+
 - name: "Install Images directory"
   copy:
     src: Images
@@ -35,35 +38,35 @@
 - name: "Setup Xresources configuration"
   copy:
     src: local_configurations/.Xresources
-    dest: ~/.
+    dest: /root/
 
 # Bashrc
 - name: "Setup Bashrc configuration"
   copy:
     src: local_configurations/.bashrc
-    dest: ~/.bashrc
+    dest: /root/.bashrc
 
 - name: "Setup Bash Profile configuration"
   copy:
     src: local_configurations/.bash_profile
-    dest: ~/.bash_profile
+    dest: /root/.bash_profile
 
 # Config Dir
 - name: "Setup config Directory"
   copy:
     src: local_configurations/.config
-    dest: ~/.
+    dest: /root/
 
 - name: "Setup tmux configuration"
   copy:
-    src: local_configurations/.tmux
-    dest: ~/.
+    src: local_configurations/.tmux.conf
+    dest: /root/
 
 - name: "Publish changes to tmux"
   shell: tmux source ~/.tmux.conf
 
 - name: "Install tmux plugins"
-  shell: ~/.tmux/plugins/tpm/bin/install_plugins
+  shell: /root/.tmux/plugins/tpm/bin/install_plugins
   ignore_errors: True
 
 

@@ -79,6 +79,9 @@
   args:
     chdir: /opt/vte-ng/
 
+- name: do facts module to get latest information
+  setup:
+    
 - git:
     repo: 'https://github.com/thestinger/termite.git'
     dest: /opt/termite

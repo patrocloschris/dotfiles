@@ -107,12 +107,5 @@
 - name: "Install i3ipc"
   shell: pip install i3ipc
 
-- name: "Fetching nerd-fonts"
-  git:
-    repo: 'https://github.com/ryanoasis/nerd-fonts.git'
-    dest: /opt/nerd-fonts
-  
-- name: "Installing nerd-fonts"
-  shell: ./install.sh
-  args:
-    chdir: /opt/nerd-fonts/  
+- name: "Install p3 i3ipc"
+  shell: pip3 install i3ipc

@@ -6,7 +6,7 @@
 set $mod Mod1
 
 #default keyboard repeat is too slow for me
-exec xset r rate 175 25
+exec xset r rate 200 20
 
 #AUTOSTART STUFF
 exec_always --no-startup-id feh --bg-scale /opt/Images/wallpaper.*
@@ -16,7 +16,7 @@ exec --no-startup-id redshift
 exec --no-startup-id clipit
 
 #Font for window titles.
-#:font pango:FuraMonoForPowerline Nerd Font Regular 13
+font pango:Hack FontAwesome 11
 #Colors
 set $back               #383C4A
 set $primary            #D0D0D0
@@ -251,7 +251,7 @@ bar {
     mode dock
     position top
     height 24
-    font pango: Fira Mono Medium for Powerline 12
+    font pango: Hack 12
     colors {
         background $back
         separator $primary

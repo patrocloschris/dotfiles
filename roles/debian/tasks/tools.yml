@@ -159,3 +159,19 @@
   apt:
      name: tmux
      state: latest
+
+- name: Installing hack-fonts 1/3
+  apt:
+     name: fonts-hack-otf
+     state: latest
+
+- name: Installing hack-fonts 2/3
+  apt:
+     name: fonts-hack-ttf
+     state: latest
+
+- name: Installing hack-fonts 3/3
+  apt:
+     name: fonts-hack-web
+     state: latest
+

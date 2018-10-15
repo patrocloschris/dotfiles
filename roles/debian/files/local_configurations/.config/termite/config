@@ -1,5 +1,5 @@
 [options]
-#font = DroidSansMonoForPowerline 11
+font = Hack 11
 clickable_url = true
 scrollback_lines = 15000
 #allow_bold = false
